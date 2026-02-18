@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review: Who Wants to Teach?</title>
+<style>
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    max-width: 760px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    line-height: 1.7;
+    color: #1a1a1a;
+    background: #fff;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.5rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #222;
+  }
+  p {
+    margin-bottom: 1rem;
+    text-align: justify;
+  }
+  ol {
+    padding-left: 1.5rem;
+  }
+  ol li {
+    margin-bottom: 1rem;
+  }
+  strong {
+    font-weight: 600;
+  }
+  em {
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<h1>Review: Who Wants to Teach? Trends and Patterns in Career Interest Among College-Intending Students</h1>
+
+<p>This paper uses Common App data from 2014–2025 — covering approximately 10 million applicants per year — to examine trends in stated interest in K–12 teaching among college-intending students. The authors document a roughly 15% decline in teaching interest over the period (from ~3.5% to ~3%), characterize the demographic and academic profile of those who express interest in teaching relative to other careers, introduce a novel similarity index to identify which careers draw the most similar applicants, and use a predictive modeling exercise to ask where "lost" teaching-interested students appear to be going instead. The main findings are that teaching interest is declining broadly across subgroups, that teaching draws disproportionately female, white, lower-SES, and lower-achieving applicants, that social work and special education are the most similar careers to teaching, and that the predicted decline is concentrated among students now expressing interest in healthcare, business, and STEM fields.</p>
+
+<p>I think this is a strong descriptive paper. The Common App data are uniquely suited to this question — they provide a truly large-scale, national window into career intentions at a formative moment, well before students enter (or don't enter) teacher preparation. The question is timely and important given well-documented teacher shortages. The paper is well-written and well-organized, and the descriptive analyses are generally executed carefully. That said, I do have a handful of substantive concerns — mostly around the interpretation of two of the more novel analytic contributions — that I think the authors should address.</p>
+
+<h2>Major Comments</h2>
+
+<p><strong>1. Sensitivity of the similarity index to weighting choices.</strong> The similarity index introduced in the paper is a creative contribution, and I appreciate the effort to formalize what is often treated informally in the literature. However, the construction of the index involves a number of consequential choices that are not interrogated. The Euclidean distance metric combines demographic characteristics, academic characteristics, and teacher-recommender ratings into a single distance measure, with equal weight assigned to each broad category and equal weight within categories (Table B1). The authors acknowledge that "the weights are ultimately arbitrary," but this is a pretty important caveat for what is presented as one of the paper's key contributions. To me, the obvious concern is that the similarity rankings in Figure 2 could change substantially under alternative weighting schemes. For instance, if one upweights academic characteristics relative to demographics, careers like engineering or medicine might appear more or less similar to teaching than the current rankings suggest. I'd encourage the authors to present some sensitivity analysis here — perhaps showing how the rankings shift under a few alternative weighting schemes, or at minimum under schemes that weight the three broad categories (demographics, academics, ratings) differently. Without this, it's hard to know how robust the similarity rankings are, and the reader is left trusting a single set of arbitrary weights.</p>
+
+<p><strong>2. Interpretation of the predictive model exercise.</strong> The approach in Section 5 — training a model on 2015 data to predict teaching interest, then applying it forward — is an interesting idea, but the interpretation requires some care. The logic is that students whom the model predicts <em>should</em> be interested in teaching (based on their 2015-era characteristics) but who in fact are <em>not</em> represent the "lost" potential teachers, and their stated career interests reveal where teaching is losing ground. The key assumption is that the relationship between student characteristics and teaching interest is stable over time — that is, the 2015 model captures something durable about who is drawn to teaching, so that deviations from the model in later years reflect external shifts (in the labor market, in the profession's attractiveness, etc.) rather than changes in the underlying preference structure. I'm not sure this assumption is examined carefully enough. If the <em>types</em> of students drawn to teaching are themselves shifting — say, because of changing cultural perceptions of teaching that differentially affect certain demographic groups — then the model's predictions in later years don't cleanly separate "lost" teachers from "never-would-have-been" teachers. The paper could benefit from some discussion of what would and would not violate this assumption, and perhaps some evidence on model stability (e.g., how do the model's coefficients or predictive accuracy change when estimated on 2020 data?).</p>
+
+<p><strong>3. The career interest measure as a proxy for actual labor supply.</strong> The paper is studying stated career interest on a college application, which is a meaningful signal but an imperfect proxy for actual entry into teaching. The authors discuss the Foote et al. (2023) finding that Common App teaching interest predicts enrollment in a teacher preparation program, which is helpful. But there's still a gap between stated interest at age 17–18 and actually becoming a teacher, and that gap could be changing over time in ways that matter for interpretation. If, for example, students in 2025 treat the career interest question less seriously than students in 2015, or if the expanding set of career options on the Common App changes response behavior, then the observed decline in teaching interest could partly reflect measurement artifacts rather than a genuine shift in preferences. I don't think this invalidates the paper's contribution — these data are still the best available window into early career intentions at scale — but I'd appreciate a bit more discussion of the boundary conditions of the measure. In particular, can the authors say more about whether the career interest question itself (its wording, placement, or option set) has changed over the study period?</p>
+
+<p><strong>4. Compositional changes in Common App membership and the CEM approach.</strong> The authors are clearly aware that the Common App member institution list has changed substantially over the study period — from roughly 500 institutions in 2014 to over 1,000 by 2025 (Table A1). The CEM approach in Appendix C is designed to address this by holding applicant composition constant. This is a reasonable and useful exercise. However, I wonder whether the CEM fully addresses the concern. The issue isn't just that the <em>applicant pool</em> is changing compositionally — it's that the <em>type of institution</em> using the Common App is changing, and with it, the population of students whose career interests are being captured. If Common App membership is expanding disproportionately among institutions that serve students who are less (or more) likely to be interested in teaching for reasons not captured by the CEM covariates, then holding observable composition constant might not be sufficient. Can the authors speak to how the institutional composition of Common App members has shifted, and whether the CEM results are sensitive to restricting the sample to institutions that were members throughout the entire study period? This seems like a natural robustness check that would substantially strengthen the descriptive trend analysis.</p>
+
+<h2>Minor Comments</h2>
+
+<ol>
+  <li><strong>Teacher-recommender ratings as student attributes.</strong> The teacher ratings from the Common App are fascinating data, and I appreciate their inclusion. That said, it would be worth acknowledging more explicitly that these ratings reflect not just student attributes but also the teacher-student relationship, the teacher's frame of reference, and potentially the type of institution the student is applying to. Students applying to more selective institutions may receive systematically different ratings regardless of their underlying qualities, and teachers may rate students who share their career interest differently. A brief note on these measurement considerations would be helpful.</li>
+
+  <li><strong>Figure 1 presentation.</strong> Figure 1 is useful but could benefit from a y-axis that starts at 0 to give the reader a better sense of the magnitude of the decline relative to the overall rate. As currently presented, the visual impression of the decline is somewhat amplified by the truncated axis. Alternatively, if the authors prefer the current scaling for readability, a note acknowledging this in the text would be appropriate.</li>
+
+  <li><strong>The "distance" metaphor.</strong> The paper refers to career similarity using spatial language ("distance," "closest"), which is natural given the Euclidean distance metric. But it might be worth briefly noting early on that "similarity" here is defined over observable characteristics of applicants — it does not capture whether the <em>work itself</em> is similar. Social work and teaching may draw similar students but involve quite different day-to-day work, and this distinction matters for policy discussions about recruitment pipelines.</li>
+
+  <li><strong>Table 1 and conditional comparisons.</strong> Table 1 is informative, but the comparisons are unconditional. Given that teaching-interested students differ on many dimensions simultaneously, it might be helpful to note (even briefly) whether the key patterns hold in a multivariate sense — for instance, whether teaching-interested students have lower test scores <em>conditional on</em> demographics and SES. The predictive model in Section 5 partially addresses this, but a brief comment linking Table 1 to the later multivariate analysis would help the reader.</li>
+
+  <li><strong>Time trends in Figure 3.</strong> The panels in Figure 3 show that the decline in teaching interest is broad-based across subgroups. I'm curious whether the <em>rate</em> of decline differs meaningfully across groups — for example, is the decline steeper among higher-achieving students or among male students? The figure makes it hard to assess relative rates of decline. A supplementary figure or brief discussion of heterogeneity in the <em>rate</em> of change (not just the level) would be informative.</li>
+
+  <li><strong>Healthcare as a destination.</strong> The finding that healthcare is the primary "destination" for lost teaching-interested students is interesting and policy-relevant. I wonder whether the authors can disaggregate healthcare further — are these students expressing interest in nursing, pre-med, public health, or other sub-fields? The Common App career categories may or may not allow this, but if they do, the disaggregation would add useful nuance.</li>
+
+  <li><strong>Writing.</strong> The paper is generally well-written and accessible. A few passages in the methods section (particularly around the similarity index construction and the CEM procedure) are somewhat dense and could benefit from a plain-language summary sentence before or after the technical description.</li>
+</ol>
+
+<h2>Summary</h2>
+
+<p>This is a valuable descriptive contribution that leverages an important and underutilized data source. The core finding — that teaching interest is declining among college-intending students, broadly across subgroups — is important for the teacher labor market literature and for policy. The similarity index and predictive model exercise are creative additions, though both would benefit from additional sensitivity analysis and more careful discussion of their assumptions. I'd encourage the authors to address the robustness of the similarity rankings, the stability assumptions underlying the predictive model, and the institutional composition concern, as these are the areas where the current analysis could be strengthened most. Overall, though, I think this paper makes a meaningful contribution and, with some revisions, would be a strong addition to the literature.</p>
+
+</body>
+</html>

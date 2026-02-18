@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review: AERJ-25-0644</title>
+<style>
+  :root {
+    --text: #1a1a1a;
+    --muted: #555;
+    --accent: #2c5282;
+    --border: #d0d0d0;
+    --bg: #ffffff;
+    --section-bg: #f7f9fc;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.75;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+  }
+  h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 1.8rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--accent);
+  }
+  h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-top: 2.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--border);
+  }
+  p {
+    margin-bottom: 1rem;
+    text-align: justify;
+    hyphens: auto;
+  }
+  .summary {
+    margin-bottom: 1.2rem;
+  }
+  .major-comment {
+    margin-bottom: 1.8rem;
+  }
+  .major-comment h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+  .minor-comments p {
+    margin-bottom: 0.8rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--border);
+  }
+  .closing {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  em { font-style: italic; }
+  strong { font-weight: 700; }
+</style>
+</head>
+<body>
+
+<h1>Review: AERJ-25-0644, &ldquo;Who Wants to Be a Teacher?&rdquo;</h1>
+
+<div class="summary">
+<p>This paper uses Common Application data covering roughly 11.5 million unique applicants (and 46 million individual applications) from the 2014&ndash;2025 application seasons to examine four questions: who expresses interest in K&ndash;12 teaching at the time of college application, how that interest has changed over the last decade, what other careers attract demographically and academically similar students, and what types of colleges prospective teachers apply to. The authors document a decline in teaching interest from approximately 4% to 3% of applicants, show that this decline is broad-based across subgroups and persists after reweighting for compositional changes, develop a novel &ldquo;similarity index&rdquo; identifying nursing, therapist, and school counselor as the careers most similar to teaching, and find that teaching-interested applicants disproportionately apply to less selective, smaller, public institutions close to home.</p>
+
+<p>I think this is a strong paper. The data are genuinely exceptional&mdash;this is, to my knowledge, the most comprehensive window into pre-college career interest in teaching that exists. The scale, the breadth of career alternatives, and the time series dimension are all valuable, and the authors exploit these features well. The paper is clearly written, appropriately cautious about its descriptive scope, and contributes meaningfully to our understanding of the teacher pipeline. I have several comments that I think would strengthen the paper, but none that undermine the core contribution.</p>
+</div>
+
+<h2>Major Comments</h2>
+
+<div class="major-comment">
+<h3>1. The similarity index is a headline result and would benefit from sensitivity analysis.</h3>
+
+<p>The similarity indices underlying Figure 2 and Table 3 are among the paper&rsquo;s most novel contributions, but the construction involves a number of consequential researcher decisions. Appendix B is transparent about these choices&mdash;equal weighting across demographic subcomponents (33% gender, 33% race/ethnicity, 33% SES), a 50/50 academic split between SAT and GPA, and a composite that averages across the four broad domains&mdash;but the authors acknowledge these are &ldquo;ultimately arbitrary.&rdquo; I think that&rsquo;s an honest characterization, and I appreciate it, but it does raise the question of how sensitive the rankings are to alternative specifications.</p>
+
+<p>For instance, what happens if academic characteristics receive twice the weight of demographics? Or if the preference and teacher-recommender dimensions are down-weighted? The Euclidean distance metric also treats all (weighted) dimensions of difference symmetrically, so a career that is very close on demographics but quite far on academics (like nursing&mdash;similarity of 5.2 on academics vs. 28.6 on demographics, per Table B2) could end up with a very different composite ranking depending on the weights. I&rsquo;d encourage the authors to show, even in an appendix, the rank-order correlation of the similarity indices under two or three alternative weighting schemes. If the broad qualitative conclusions are robust&mdash;nursing and therapist are always near teaching, engineering and business are always far&mdash;that would substantially strengthen the paper&rsquo;s claims. If the rankings are sensitive, that&rsquo;s important to know too.</p>
+
+<p>As a related point, I wonder whether presenting the dimension-specific indices more prominently (perhaps in the main text rather than only in Table B2) would actually be more useful for the policy audience. The composite index is a nice summary, but the disaggregated picture&mdash;nursing is academically similar but demographically different; social work is the reverse&mdash;seems at least as actionable.</p>
+</div>
+
+<div class="major-comment">
+<h3>2. The predicted probability exercise (Table 2) could be more clearly differentiated from the CEM approach.</h3>
+
+<p>The paper offers two strategies for separating compositional change from genuine shifts in teaching interest: the CEM-reweighted trends in Figure 3 (which hold the applicant pool constant at 2014 composition) and the predicted probability exercise in Table 2 (which uses 2015 logistic regression coefficients to generate out-of-sample predictions for later cohorts). Both are sensible approaches, but they seem to be answering essentially the same question&mdash;&ldquo;is the decline in teaching interest just about who&rsquo;s applying?&rdquo;&mdash;and the paper doesn&rsquo;t fully articulate what the predicted probability exercise adds beyond the CEM results.</p>
+
+<p>To me, the CEM approach is more transparent and easier to interpret. The predicted probability exercise, by contrast, introduces an additional assumption&mdash;that the 2015 coefficient vector remains informative for later cohorts. If the relationship between applicant characteristics and teaching interest is itself changing over time (which seems plausible given the broader trends the paper documents), then the predicted probabilities for 2025 applicants may be miscalibrated. The paper acknowledges this but somewhat in passing. I&rsquo;d encourage the authors either to provide some evidence on coefficient stability (e.g., are the 2015 and 2025 logit coefficients broadly similar?) or to sharpen the argument for what Table 2 reveals that Figure 3 does not. One possibility: Table 2 allows you to condition on continuous combinations of characteristics rather than the coarsened cells used in CEM, which could be a meaningful advantage. But this should be stated explicitly.</p>
+</div>
+
+<div class="major-comment">
+<h3>3. The college characteristics analysis&mdash;how much is teaching interest vs. applicant composition?</h3>
+
+<p>The analysis in Tables 4 and 5 is interesting, but I think the paper undersells an important finding embedded in the comparison between model specifications. In Table 4, Column 1 (no applicant controls) shows large raw differences in where teaching-interested students apply&mdash;substantially lower odds of applying to selective, private, or doctoral institutions. By Column 3 (with applicant characteristics), many of these associations attenuate meaningfully. For instance, the odds ratio on private doctoral institutions goes from 0.55 to essentially 1.0, and the HBCU coefficient moves from 0.64 to 0.70. The &ldquo;distance from home&rdquo; penalty also attenuates.</p>
+
+<p>This pattern tells us that a meaningful share of the institutional sorting of prospective teachers is driven by <em>who they are</em> (lower test scores, lower income, etc.) rather than by teaching interest per se. To me, this distinction matters quite a lot for policy. If the goal is to attract prospective teachers to more selective institutions&mdash;perhaps because those institutions offer stronger preparation&mdash;the binding constraint may be academic preparation and financial access, not something about how teaching-interested students think about college choice. The paper touches on this, but I&rsquo;d encourage the authors to engage with it more directly. What should we make of the fact that conditional on observables, teaching-interested students look much more similar to everyone else in their college choices?</p>
+</div>
+
+<div class="major-comment">
+<h3>4. Career interest as the outcome&mdash;further engagement with validity and the &ldquo;Other&rdquo; category.</h3>
+
+<p>The paper rests on a single self-reported career interest item completed at age 17&ndash;18. The authors appropriately cite Blom (2020) showing that Common App career interest predicts college major and eventual occupation, which is helpful. I wonder if the authors can provide a bit more specificity about the predictive validity&mdash;what share of applicants expressing teaching interest actually major in education or enter teaching? Even an approximate calibration would help the reader assess what a movement from 4% to 3% means in practical terms. If the conversion rate from stated interest to career entry is, say, 30%, then we&rsquo;re talking about a shift from 1.2% to 0.9% of applicants eventually becoming teachers&mdash;which frames the magnitude quite differently.</p>
+
+<p>I&rsquo;m also curious about the &ldquo;Other&rdquo; and &ldquo;Undecided&rdquo; categories. Table A2 shows that &ldquo;Other&rdquo; is the most common destination for applicants with high predicted teaching probability who do not select teaching&mdash;and this share appears to grow over time. Can the authors characterize what &ldquo;Other&rdquo; captures? If students are increasingly selecting &ldquo;Other&rdquo; rather than named careers, some of the decline in teaching interest could reflect a general shift toward non-specificity (or non-response) rather than a genuine decline in teaching as a career aspiration. Even a brief treatment of this would be valuable.</p>
+</div>
+
+<div class="major-comment">
+<h3>5. The CEM match rate and who gets excluded.</h3>
+
+<p>The declining CEM match rate&mdash;from 95% in 2015 to 86% in 2025&mdash;is noted in the paper but deserves a bit more attention. The unmatched 14% of 2025 applicants are students whose coarsened characteristic profiles have no analog in the 2014 applicant pool. By construction, these are &ldquo;new entrant&rdquo; types, which likely reflects the Common App&rsquo;s institutional expansion. These applicants are excluded from the CEM-weighted analysis, but they are arguably the most important group for understanding how teaching interest is evolving as the Common App reaches a broader population.</p>
+
+<p>Can the authors characterize these unmatched applicants briefly? Are they more or less interested in teaching than matched applicants? This matters because the CEM-weighted trends are identified only on the subset of the applicant pool that looks like the 2014 Common App membership, which skews toward more selective institutions. If the new entrants are substantially different in their teaching interest, the CEM-weighted trends may not be representative of the full contemporary applicant pool.</p>
+</div>
+
+<h2>Minor Comments</h2>
+
+<div class="minor-comments">
+<p>Figure 2 is doing a lot of work and is central to the paper, but it&rsquo;s visually quite busy with 34 career labels clustered in a relatively small space. I&rsquo;d suggest labeling only the careers discussed in the text and providing the full set in an appendix table. The current version makes it hard to identify specific careers, especially in the dense middle region.</p>
+
+<p>The paper switches between &ldquo;teaching&rdquo; and &ldquo;K&ndash;12 teaching&rdquo; throughout. Since the career interest question specifically refers to K&ndash;12, I&rsquo;d suggest being consistent.</p>
+
+<p>The discussion of Common App fee waiver as an SES proxy is fine, but it&rsquo;s worth noting that fee waiver eligibility criteria have expanded over the study period. If the threshold for receiving a fee waiver has changed, time trends in the SES composition of teaching-interested applicants could partly reflect measurement shifts rather than genuine compositional change.</p>
+
+<p>In the data section, the paper refers to &ldquo;application seasons&rdquo; (e.g., the 2025 season). It would help to clarify early on what calendar year this corresponds to&mdash;are these students applying in fall 2024 for enrollment in fall 2025?</p>
+
+<p>Table 5 (the multinomial logit for college characteristics by career) is dense and hard to parse with 8 career columns. I wonder whether a more focused presentation&mdash;highlighting just the 3&ndash;4 most similar careers alongside teaching&mdash;would be more effective for the reader.</p>
+
+<p>The paper notes that the career interest question changed from write-in to drop-down in 2014, which motivates the start date. It would be helpful to briefly describe the pre-2014 format, since this is a natural question and some readers may wonder whether the format change itself affected the distribution of responses.</p>
+</div>
+
+<div class="closing">
+<h2>Closing</h2>
+
+<p>This is a well-executed and timely descriptive study. The Common App data provide a genuinely novel and powerful window into the pre-college teacher pipeline, and the authors use these data thoughtfully. The core contributions&mdash;documenting the broad-based decline in teaching interest, benchmarking teaching against other careers via the similarity index, and characterizing the institutional choices of prospective teachers&mdash;are each valuable on their own, and together they paint a richer picture than any prior study. The issues I raise are largely about strengthening interpretation and building robustness, particularly around the similarity index (which should be subjected to sensitivity analysis) and the predicted probability exercise (which should be more clearly distinguished from the CEM approach). I think this paper makes a meaningful contribution and, with attention to these issues, is well-suited for AERJ.</p>
+</div>
+
+</body>
+</html>
