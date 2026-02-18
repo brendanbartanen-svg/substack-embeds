@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review of AERJ-25-0644</title>
+<style>
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    max-width: 780px;
+    margin: 40px auto;
+    padding: 0 24px;
+    line-height: 1.7;
+    color: #1a1a1a;
+    background: #fff;
+  }
+  h1 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 24px;
+  }
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 36px;
+    margin-bottom: 12px;
+    color: #222;
+  }
+  p {
+    margin-bottom: 14px;
+    text-align: justify;
+  }
+  .summary-box {
+    background: #f7f7f7;
+    border-left: 4px solid #555;
+    padding: 16px 20px;
+    margin: 28px 0;
+  }
+  .major-comment {
+    margin-bottom: 24px;
+  }
+  .major-comment strong {
+    display: block;
+    margin-bottom: 4px;
+  }
+  ol.minor {
+    padding-left: 20px;
+  }
+  ol.minor li {
+    margin-bottom: 12px;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 32px 0;
+  }
+  em { font-style: italic; }
+</style>
+</head>
+<body>
+
+<h1>Review of AERJ-25-0644: &ldquo;Who Wants to Be a Teacher?&rdquo;</h1>
+
+<p>This paper uses Common App data covering approximately 11.5 million college applicants from 2014 to 2025 to examine who expresses interest in K&ndash;12 teaching as a career. The authors employ logistic regression to characterize the demographic, academic, and application profiles of prospective teachers relative to the overall applicant pool and relative to applicants interested in other specific careers. They also document trends in teaching interest over the decade-long panel using a coarsened exact matching (CEM) approach to adjust for compositional changes in the Common App sample. Key findings include that prospective teachers are disproportionately female, white, from lower-income zip codes, and have lower academic achievement; that teaching interest declined roughly 20% over the study period; that nursing has grown as a competing career; and that racial/ethnic gaps in teaching interest are larger than those for demographically similar careers like nursing and social work.</p>
+
+<p>I think this is a strong descriptive paper that makes a clear contribution. The Common App data are genuinely novel for this question&mdash;they capture career interest at a formative moment, well before labor market entry, and at a scale that dwarfs any survey-based effort. The paper is well-written, well-organized, and the front half in particular is quite strong. I appreciate the care taken with the CEM approach to address compositional changes over time, and the dissimilarity indices are a creative way to contextualize teaching relative to other careers. That said, I have several substantive concerns&mdash;mostly about measurement and interpretation&mdash;that I think the authors should address. I&rsquo;ll organize these thematically.</p>
+
+<hr>
+
+<h2>Major Comments</h2>
+
+<div class="major-comment">
+<strong>1. The career interest measure and what it captures.</strong>
+<p>The entire paper rests on a single field in the Common App profile where applicants select one career interest from a fixed menu. The authors acknowledge this limitation but I think it deserves more sustained attention. To me, there are a few distinct concerns here. First, this is a mutually exclusive choice&mdash;an applicant interested in both teaching and nursing can only select one. The paper treats the measure as revealing something meaningful about the applicant&rsquo;s orientation toward teaching, but how sensitive are the results to the forced-choice nature of the instrument? For example, the finding that nursing is &ldquo;competing&rdquo; with teaching (Table A2) could partly reflect the mechanics of a single-selection field rather than a genuine substitution pattern. Can the authors say more about how they think this constraint shapes the results? Second, where in the application process does this field appear, and how much weight do applicants give it? If it&rsquo;s a low-stakes profile field completed early in the process, the signal-to-noise ratio may differ substantially from, say, intended major declarations. I wonder whether the authors have any evidence&mdash;even anecdotal&mdash;on how seriously applicants treat this field. Third, the &ldquo;Undecided&rdquo; category is quite large (around 13% of the sample). How are these applicants handled in the logistic regressions? The paper seems to include them in the non-teaching baseline, but given their size they could meaningfully affect the coefficient estimates. I&rsquo;d encourage the authors to be more transparent about this choice and perhaps show sensitivity to it.</p>
+</div>
+
+<div class="major-comment">
+<strong>2. Coverage and representativeness of the Common App sample.</strong>
+<p>The authors are appropriately careful about noting that the Common App does not cover all college-intending students, but I think the implications of this coverage gap deserve more attention than they currently receive. The Common App skews toward selective, four-year institutions. Many future teachers enter the profession through less selective regional universities, community college transfer pathways, and institutions in states that use their own application platforms (notably Texas and, to some extent, the University of California and CSU systems). These are precisely the kinds of institutions that disproportionately train teachers, particularly teachers of color. This means the paper&rsquo;s portrait of &ldquo;who wants to be a teacher&rdquo; is really a portrait of who wants to be a teacher <em>among students applying to Common App member institutions</em>. That&rsquo;s still valuable, but the distinction matters for how the findings should be interpreted, particularly the racial/ethnic composition results and the time trends. The paper&rsquo;s framing sometimes elides this&mdash;the title &ldquo;Who Wants to Be a Teacher?&rdquo; implies a more universal scope than the data support. I&rsquo;d encourage the authors to be more consistently precise about the population they&rsquo;re characterizing and to discuss more explicitly how the exclusion of non-Common App pathways might affect the findings, particularly given that the composition of Common App member institutions is itself changing over time (Table A1 shows substantial growth in the number of member institutions).</p>
+</div>
+
+<div class="major-comment">
+<strong>3. The dissimilarity index construction.</strong>
+<p>The dissimilarity indices in Figure 2 are one of the paper&rsquo;s more novel contributions, but the construction involves a number of researcher degrees of freedom that give me some pause. The weights assigned to demographic, academic, and teacher-rating dimensions are described as &ldquo;ultimately arbitrary&rdquo; in Appendix B, and the specific choices (e.g., 33.3% each for gender, race/ethnicity, and SES within demographics) could meaningfully affect the rankings. I have a few concerns here. First, how sensitive are the results to the weighting scheme? The paper would benefit from showing that the key conclusions&mdash;particularly the claim that nursing and social work are the most &ldquo;similar&rdquo; careers to teaching&mdash;are robust to alternative weighting choices. Even a simple exercise showing results under two or three different weighting schemes would be helpful. Second, the Euclidean distance metric treats all dimensions symmetrically, but there&rsquo;s no particular reason to think that a one-unit difference in the academic dimension is comparable to a one-unit difference in the demographic dimension. The normalization to a 0&ndash;100 scale helps, but the underlying commensurability assumption is still doing a lot of work. Third, the teacher-recommender rating dimension is only available for a subset of applicants who request recommendations from teachers (which is most, but not all). Is this dimension contributing systematically different information from the demographic and academic dimensions, or is it largely redundant? Some discussion of the incremental contribution of this third dimension would strengthen the analysis.</p>
+</div>
+
+<div class="major-comment">
+<strong>4. Teacher-recommender ratings: measurement concerns.</strong>
+<p>The analysis of teacher-recommender ratings is interesting and novel, but I think the paper underestimates the measurement challenges here. Recommender ratings are not just a signal of student quality&mdash;they also reflect the recommender&rsquo;s standards, the school&rsquo;s norms, and the strategic context of the recommendation. A few specific issues: First, there is likely selection into which teachers write recommendations and how they rate students. Teachers writing for students applying to highly selective institutions may calibrate their ratings differently than those writing for students applying to open-access institutions. Since the paper finds that prospective teachers apply to less selective schools, any differences in recommender ratings could partly reflect this differential calibration rather than actual differences in student characteristics. Second, the paper interprets the finding that prospective teachers receive lower ratings on &ldquo;intellectual curiosity&rdquo; and &ldquo;academic achievement&rdquo; but comparable ratings on interpersonal dimensions as evidence about the <em>type</em> of student interested in teaching. But this pattern is also consistent with recommenders adjusting their ratings based on knowledge of the student&rsquo;s career interest&mdash;a teacher writing a recommendation for a student they know wants to teach may emphasize relational qualities over academic ones. I&rsquo;m not sure the data can distinguish between these interpretations, but the paper should acknowledge the ambiguity more explicitly.</p>
+</div>
+
+<div class="major-comment">
+<strong>5. Interpreting time trends: the CEM weights and declining coverage.</strong>
+<p>The CEM approach to address compositional changes in the Common App sample is well-motivated, and I commend the authors for taking this seriously. However, a few issues remain. The matched percentage declines from 95% in 2015 to about 86% in 2025 (Table C1). This means that by the end of the panel, roughly 14% of applicants are excluded from the weighted analysis because they don&rsquo;t have matches in the 2014 base year. These are, by construction, &ldquo;new types&rdquo; of applicants who entered the Common App ecosystem as it expanded. If these new entrants have systematically different teaching interest rates&mdash;which seems likely given the institutional composition shifts documented in Table A1&mdash;then the CEM-weighted trend may not fully capture what&rsquo;s happening to teaching interest in the broader population. Can the authors characterize who these unmatched applicants are and what their teaching interest rates look like? More generally, I wonder whether there is a tension between the CEM approach (which holds the sample fixed to the 2014 composition) and the paper&rsquo;s ambition to say something about how teaching interest is evolving nationally. The CEM trend answers the question &ldquo;among people who look like 2014 Common App applicants, how has teaching interest changed?&rdquo; That&rsquo;s a useful quantity, but it&rsquo;s different from &ldquo;how has teaching interest changed among college-intending students?&rdquo; and the paper&rsquo;s framing doesn&rsquo;t always make this distinction clear.</p>
+</div>
+
+<hr>
+
+<h2>Minor Comments</h2>
+
+<p>The paper is generally well-written and accessible. A few smaller observations:</p>
+
+<ol class="minor">
+<li>Table 1 is very dense and could benefit from some restructuring. The sheer number of rows and the inclusion of both raw percentages and odds ratios make it hard to identify the key patterns at a glance. I wonder whether the most important comparisons could be highlighted visually or whether some of the less central career comparisons could be moved to an appendix.</li>
+
+<li>The choice of comparison careers (nurse, therapist, social worker, business executive, engineer) is reasonable but could be better motivated in the text. Why these five? Is it purely based on frequency and the dissimilarity analysis, or is there a substantive rationale grounded in the teacher labor market literature?</li>
+
+<li>Figure 1 is effective and one of the paper&rsquo;s most compelling visuals. I&rsquo;d suggest adding confidence intervals or some indication of uncertainty, even though the samples are enormous&mdash;it helps signal to readers what kinds of differences are meaningful.</li>
+
+<li>The discussion section&rsquo;s treatment of policy implications is appropriately cautious, though I think the paper could say a bit more about what these descriptive patterns <em>don&rsquo;t</em> tell us. For instance, the finding that prospective teachers have lower academic achievement doesn&rsquo;t directly speak to whether policies aimed at recruiting higher-achieving students into teaching would be effective, because we don&rsquo;t observe the counterfactual supply response. A brief acknowledgment of this limitation would strengthen the discussion.</li>
+
+<li>On p. 15, the paper notes that teaching has the largest gender dissimilarity of any career interest. This is a striking finding that deserves a bit more unpacking. Is this driven primarily by the low share of men interested in teaching, or is it also about the types of women interested in teaching being distinctive?</li>
+
+<li>The paper switches between &ldquo;K&ndash;12 teacher&rdquo; and &ldquo;teacher&rdquo; throughout. Since the Common App field specifically asks about K&ndash;12 teaching (as distinct from college teaching, which is a separate option), it would be helpful to be consistent in terminology to avoid any confusion.</li>
+</ol>
+
+<hr>
+
+<div class="summary-box">
+<h2 style="margin-top:0;">Summary</h2>
+<p style="margin-bottom:0;">This is a well-executed descriptive paper that leverages genuinely novel data to characterize the pipeline of students interested in K&ndash;12 teaching. The scale of the data, the decade-long panel, and the ability to compare teaching to dozens of other career interests are real strengths. My primary concerns center on measurement&mdash;what the career interest field actually captures, the representativeness of the Common App sample for questions about the teaching pipeline, and the interpretation of teacher-recommender ratings. None of these concerns are fatal, but they do require more careful treatment than the paper currently provides. I&rsquo;d encourage the authors to be more consistently precise about what population and what construct their analyses speak to, and to provide some evidence on the robustness of the dissimilarity indices to alternative construction choices. With attention to these issues, I think the paper would make a solid contribution to the literature on teacher supply.</p>
+</div>
+
+</body>
+</html>
