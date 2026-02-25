@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鲁迅 · The Iron House — Lu Xun's 呐喊自序</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #f5f0e8;
+    --paper-dark: #ebe4d8;
+    --accent: #8b2500;
+    --accent-light: #c4583a;
+    --muted: #6b5e50;
+    --muted-light: #9a8d7f;
+    --border: #d4cabb;
+    --highlight: #fdf6e3;
+    --annotation-bg: #f9f5ed;
+    --commentary-bg: #f0ebe0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Crimson Pro', 'Georgia', serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* === HEADER === */
+  header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 4rem 2rem 3.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '铁屋';
+    position: absolute;
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(8rem, 20vw, 18rem);
+    font-weight: 700;
+    opacity: 0.04;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  header .subtitle {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    font-size: 0.75rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--muted-light);
+    margin-bottom: 1.5rem;
+  }
+
+  header h1 {
+    font-family: 'Crimson Pro', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+  }
+
+  header h1 .chinese {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 500;
+    display: block;
+    font-size: 0.6em;
+    margin-bottom: 0.4em;
+    color: var(--accent-light);
+    letter-spacing: 0.15em;
+  }
+
+  header .meta {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    color: var(--muted-light);
+    margin-top: 1.5rem;
+    line-height: 1.6;
+  }
+
+  header .meta em { font-style: italic; color: var(--paper); }
+
+  header .divider-line {
+    width: 60px;
+    height: 1px;
+    background: var(--accent);
+    margin: 1.5rem auto 0;
+  }
+
+  /* === NAVIGATION === */
+  nav {
+    background: var(--paper-dark);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+  }
+
+  nav a {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    margin: 0 1.2rem;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--accent); }
+
+  /* === MAIN CONTENT === */
+  main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+  }
+
+  section {
+    margin-top: 4rem;
+  }
+
+  .section-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    color: var(--ink);
+  }
+
+  h3 {
+    font-family: 'Crimson Pro', serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    margin: 2rem 0 0.8rem;
+    color: var(--ink);
+  }
+
+  p {
+    margin-bottom: 1.1rem;
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  /* === BILINGUAL TEXT BLOCKS === */
+  .text-block {
+    margin: 2rem 0;
+    padding: 0;
+  }
+
+  .text-block .passage {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--accent);
+  }
+
+  .text-block .passage.dialogue {
+    border-left-color: var(--muted-light);
+  }
+
+  .text-block .passage-number {
+    position: absolute;
+    left: -2.2rem;
+    top: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted-light);
+    font-weight: 300;
+  }
+
+  .chinese-text {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--ink);
+    margin-bottom: 0.8rem;
+    text-align: justify;
+  }
+
+  .translation {
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--muted);
+    text-align: justify;
+  }
+
+  .speaker {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+  }
+
+  /* === ANNOTATION MARKERS === */
+  .note-marker {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 400;
+    color: var(--accent);
+    vertical-align: super;
+    margin-left: 2px;
+    cursor: help;
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+  }
+
+  .note-marker:hover {
+    color: var(--accent-light);
+  }
+
+  /* === ANNOTATIONS === */
+  .annotations {
+    background: var(--annotation-bg);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 1.8rem 2rem;
+    margin: 2rem 0;
+  }
+
+  .annotation {
+    margin-bottom: 1.2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+  }
+
+  .annotation:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .annotation-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--accent);
+    min-width: 1.5rem;
+    padding-top: 0.15rem;
+  }
+
+  .annotation-text {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+
+  .annotation-text strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .annotation-text .zh {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 0.85em;
+  }
+
+  /* === COMMENTARY === */
+  .commentary {
+    background: var(--commentary-bg);
+    border-left: 3px solid var(--accent);
+    padding: 1.8rem 2rem;
+    margin: 2.5rem 0;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .commentary .scholar {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+
+  .commentary p {
+    font-size: 0.92rem;
+    color: var(--muted);
+    text-align: left;
+  }
+
+  .commentary p:last-child { margin-bottom: 0; }
+
+  /* === CALLOUT BOX === */
+  .callout {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 2.5rem;
+    margin: 3rem 0;
+    text-align: center;
+    position: relative;
+  }
+
+  .callout .chinese-text {
+    color: var(--paper);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .callout .translation {
+    color: var(--muted-light);
+    font-size: 1rem;
+  }
+
+  /* === INTRO PROSE === */
+  .intro {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--muted);
+  }
+
+  .intro .drop-cap::first-letter {
+    font-size: 3.2em;
+    float: left;
+    line-height: 0.8;
+    margin: 0.08em 0.12em 0 0;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* === KEY TERMS TABLE === */
+  .terms-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .term-zh {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-align: right;
+    padding-top: 0.1rem;
+  }
+
+  .term-def {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+  }
+
+  .term-def strong {
+    color: var(--ink);
+  }
+
+  /* === FOOTER === */
+  footer {
+    background: var(--ink);
+    color: var(--muted-light);
+    text-align: center;
+    padding: 3rem 2rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.8;
+  }
+
+  footer a { color: var(--accent-light); }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    header { padding: 3rem 1.5rem 2.5rem; }
+    main { padding: 0 1.2rem 4rem; }
+    nav a { margin: 0 0.6rem; font-size: 0.65rem; }
+    .annotations { padding: 1.2rem 1.4rem; }
+    .commentary { padding: 1.2rem 1.4rem; }
+    .text-block .passage { padding-left: 1rem; }
+    .text-block .passage-number { display: none; }
+    .callout { padding: 1.8rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="subtitle">A Critical Reading</div>
+  <h1>
+    <span class="chinese">呐喊自序 · 铁屋子</span>
+    The Iron House Metaphor
+  </h1>
+  <div class="meta">
+    From the Preface to <em>Call to Arms</em> (呐喊) by <em>Lu Xun</em> (鲁迅)<br>
+    Beijing, December 1922
+  </div>
+  <div class="divider-line"></div>
+</header>
+
+<nav>
+  <a href="#context">Context</a>
+  <a href="#text">Text</a>
+  <a href="#annotations">Annotations</a>
+  <a href="#commentary">Commentary</a>
+  <a href="#terms">Key Terms</a>
+</nav>
+
+<main>
+
+  <!-- ===== CONTEXT ===== -->
+  <section id="context">
+    <div class="section-label">Historical Context</div>
+    <div class="intro">
+      <p class="drop-cap">In December 1922, Lu Xun (born Zhou Shuren, 1881–1936) published <em>Call to Arms</em> (呐喊), his first collection of short stories, including such landmark works as "A Madman's Diary" (狂人日记) and "The True Story of Ah Q" (阿Q正传). The preface to this collection, the 呐喊自序, is among the most celebrated pieces of modern Chinese prose — part memoir, part literary manifesto, part philosophical meditation on the ethics of awakening.</p>
+      <p>The passage below is the climax of the preface. Lu Xun describes a period of deep disillusionment in Beijing, where he had retreated into copying ancient inscriptions after the failure of the 1911 Revolution to produce meaningful social change. His friend Qian Xuantong (钱玄同) — referred to in the text by the pseudonym Jin Xinyi (金心异) — visits to recruit him as a writer for <em>New Youth</em> (新青年) magazine, the flagship journal of the New Culture Movement. Lu Xun resists with a devastating parable. What follows is one of the most consequential exchanges in modern Chinese intellectual history.</p>
+    </div>
+  </section>
+
+  <!-- ===== FULL TEXT ===== -->
+  <section id="text">
+    <div class="section-label">Text &amp; Translation</div>
+    <h2>The Iron House Passage</h2>
+    <p style="font-size:0.88rem; color:var(--muted); margin-bottom:2rem;">
+      Extracted from 《呐喊》自序 (Preface to <em>Call to Arms</em>). The Chinese text is Lu Xun's original; the English translation synthesizes the landmark renditions by Yang Xianyi &amp; Gladys Yang (1960) and William A. Lyell (1990), with adjustments for clarity and annotation.
+    </p>
+
+    <div class="text-block">
+
+      <!-- Passage 1: Narrative Setup -->
+      <div class="passage">
+        <span class="passage-number">§1</span>
+        <div class="chinese-text">
+          ……可是说到希望，却是不能抹杀的，因为希望是在于将来，决不能以我之必无的证明，来折服了他之所谓可有，于是我终于答应他也做文章了，这便是最初的一篇《狂人日记》。从此以后，便一发而不可收<a href="#n1" class="note-marker">1</a>，每写些小说模样的文章，以敏于当时的编辑者的意中，这便是我的短篇小说集《呐喊》。
+        </div>
+        <div class="translation">
+          …But when it came to "hope," I could not blot it out entirely, for hope belongs to the future, and I could not use my own certainty that something would <em>never</em> be to refute his belief that it <em>might</em> be. And so at last I agreed to write, and the result was my first story, "A Madman's Diary." From that point on, I could not stop — I kept writing short fiction, sometimes to gratify the wishes of the editors of the time; and this became my collection <em>Call to Arms</em>.
+        </div>
+      </div>
+
+      <!-- Passage 2: Lu Xun's parable setup -->
+      <div class="passage">
+        <span class="passage-number">§2</span>
+        <div class="speaker">Lu Xun — The Parable</div>
+        <div class="chinese-text">
+          "假如一间铁屋子<a href="#n2" class="note-marker">2</a>，是绝无窗户而万难破毁的<a href="#n3" class="note-marker">3</a>，里面有许多熟睡的人们，不久都要闷死了<a href="#n4" class="note-marker">4</a>，然而是从昏睡入死灭，并不感到就死的悲哀<a href="#n5" class="note-marker">5</a>。现在你大嚷起来<a href="#n6" class="note-marker">6</a>，惊起了较为清醒的几个人，使这不幸的少数者来受无可挽救的临终的苦楚<a href="#n7" class="note-marker">7</a>，你倒以为对得起他们么？"
+        </div>
+        <div class="translation">
+          "Imagine an iron house — without windows, virtually indestructible — with many people fast asleep inside, all of whom will soon suffocate and die. Since they will pass from deep slumber into death, they will not feel the anguish of dying. Now if you raise a great shout and rouse a few of the lighter sleepers, making these unfortunate few suffer the agony of irrevocable death with full awareness — do you really think you have done them a kindness?"
+        </div>
+      </div>
+
+      <!-- The Pivotal Reply -->
+      <div class="callout">
+        <div class="speaker" style="color:var(--accent-light);">Jin Xinyi (Qian Xuantong) — The Reply</div>
+        <div class="chinese-text">
+          "然而几个人既然起来，你不能说决没有毁坏这铁屋的希望。"<a href="#n8" class="note-marker" style="color:var(--accent-light);">8</a>
+        </div>
+        <div class="translation">
+          "But if a few people have already awakened, you cannot say there is absolutely no hope of destroying the iron house."
+        </div>
+      </div>
+
+      <!-- Passage 3: Lu Xun's concession -->
+      <div class="passage">
+        <span class="passage-number">§3</span>
+        <div class="chinese-text">
+          是的，我虽然自有我的确信<a href="#n9" class="note-marker">9</a>，然而说到希望，却是不能抹杀的<a href="#n10" class="note-marker">10</a>，因为希望是在于将来，决不能以我之必无的证明，来折服了他之所谓可有<a href="#n11" class="note-marker">11</a>，于是我终于答应他也做文章了，这便是最初的一篇《狂人日记》。
+        </div>
+        <div class="translation">
+          True enough: though I had my own convictions, when it came to hope I could not deny it outright — for hope belongs to the future, and I could not use my own certainty of what <em>cannot</em> be to refute his claim of what <em>might yet</em> be. And so at last I agreed to write — and that first effort was "A Madman's Diary."
+        </div>
+      </div>
+
+      <!-- Passage 4: Lu Xun's admission about "cheating" -->
+      <div class="passage">
+        <span class="passage-number">§4</span>
+        <div class="chinese-text">
+          在我自己，本以为现在是已经并非一个切迫而不能已于言的人了，但或者也还未能忘怀于当日自己的寂寞的悲哀罢，所以有时候仍不免呐喊几声，聊以慰藉那在寂寞里奔驰的猛士<a href="#n12" class="note-marker">12</a>，使他不惮于前驱<a href="#n13" class="note-marker">13</a>。
+        </div>
+        <div class="translation">
+          As for myself, I had thought I was no longer one who felt compelled to speak out. But perhaps I had not yet been able to forget my own sorrow at being so alone; and so from time to time I still could not help uttering a few battle cries, to hearten the valiant warriors who rushed onward through the darkness, so that they would not lose the courage to advance.
+        </div>
+      </div>
+
+      <!-- Passage 5: The refusal to impose despair -->
+      <div class="passage">
+        <span class="passage-number">§5</span>
+        <div class="chinese-text">
+          至于我的喊声是勇猛或是悲哀，是可憎或是可笑，那倒是不暇顾及的<a href="#n14" class="note-marker">14</a>；但既然是呐喊，则当然须听将令的了<a href="#n15" class="note-marker">15</a>，所以我往往不恤用了曲笔<a href="#n16" class="note-marker">16</a>，在《药》的瑜儿的坟上平空添上一个花环<a href="#n17" class="note-marker">17</a>，在《明天》里也不叙单四嫂子竟没有做到看见儿子的梦，因为那时的主将是不主张消极的<a href="#n18" class="note-marker">18</a>。
+        </div>
+        <div class="translation">
+          Whether my cries were brave or mournful, hateful or laughable, was something I had no time to consider. But since they were battle cries, I naturally had to follow the general's commands. And so I often resorted to innuendoes and evasions: I added a wreath of flowers to the grave of little Xia Yu in "Medicine," and in "Tomorrow" I refrained from writing that Fourth Shan's Wife never even dreamed of seeing her dead son — because the commander-in-chief of the time was opposed to pessimism.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== ANNOTATIONS ===== -->
+  <section id="annotations">
+    <div class="section-label">Annotations</div>
+    <h2>Notes on the Text</h2>
+
+    <div class="annotations">
+
+      <div class="annotation" id="n1">
+        <span class="annotation-num">1</span>
+        <div class="annotation-text">
+          <strong><span class="zh">一发而不可收</span></strong> — Literally "once released, could not be reined back in." A classical idiom suggesting a dam breaking. Lu Xun frames his literary career as something that happened <em>to</em> him, not a heroic choice — consistent with his lifelong self-deprecation about his motives for writing.
+        </div>
+      </div>
+
+      <div class="annotation" id="n2">
+        <span class="annotation-num">2</span>
+        <div class="annotation-text">
+          <strong><span class="zh">铁屋子</span> (tiě wūzi) — "iron house/room"</strong> — The central metaphor. The image draws on multiple registers: the sealed chamber of traditional Chinese coffin architecture; the iron-plated warships of Western imperialism that Lu Xun would have seen in Nanjing; and possibly the gas chambers of European antisemitic violence he may have read about in Japan. The word <span class="zh">屋子</span> is deliberately domestic — a house, not a prison — suggesting that the sleepers are comfortable, that the danger is precisely in the ordinariness of the enclosure.
+        </div>
+      </div>
+
+      <div class="annotation" id="n3">
+        <span class="annotation-num">3</span>
+        <div class="annotation-text">
+          <strong><span class="zh">绝无窗户而万难破毁的</span></strong> — "absolutely without windows and virtually impossible to destroy." The double emphasis (<span class="zh">绝无</span> + <span class="zh">万难</span>) creates a rhetorical cage: Lu Xun is not hedging, he is describing conditions of total impossibility. This maximalism is the philosophical crux that Qian Xuantong's reply breaks open.
+        </div>
+      </div>
+
+      <div class="annotation" id="n4">
+        <span class="annotation-num">4</span>
+        <div class="annotation-text">
+          <strong><span class="zh">闷死</span> (mēn sǐ)</strong> — To die of suffocation, but <span class="zh">闷</span> also means "bored," "stifled," "depressed." The double meaning is almost certainly intentional: the sleepers are dying of spiritual suffocation as much as physical — dying of ennui, complacency, cultural stagnation.
+        </div>
+      </div>
+
+      <div class="annotation" id="n5">
+        <span class="annotation-num">5</span>
+        <div class="annotation-text">
+          <strong><span class="zh">从昏睡入死灭，并不感到就死的悲哀</span></strong> — "Passing from deep sleep into extinction, they would not feel the sorrow of dying." This is the utilitarian heart of Lu Xun's pessimism: if consciousness only adds suffering without enabling escape, then awareness itself becomes a cruelty. He is mounting a case for merciful ignorance — and he means it.
+        </div>
+      </div>
+
+      <div class="annotation" id="n6">
+        <span class="annotation-num">6</span>
+        <div class="annotation-text">
+          <strong><span class="zh">大嚷</span> (dà rǎng)</strong> — "shout loudly" or "raise a clamor." The word <span class="zh">嚷</span> is deliberately undignified — closer to "yelling" than "proclaiming." Lu Xun does not imagine the enlightener as noble; he imagines him as a noisemaker. The word anticipates the title 呐喊 (<em>Call to Arms</em> / <em>Outcry</em>) itself.
+        </div>
+      </div>
+
+      <div class="annotation" id="n7">
+        <span class="annotation-num">7</span>
+        <div class="annotation-text">
+          <strong><span class="zh">无可挽救的临终的苦楚</span></strong> — "the irrevocable anguish of dying." The phrase <span class="zh">无可挽救</span> (beyond saving) is the heaviest load in the sentence: the few who wake will suffer <em>and</em> still die. Awakening here confers no survival advantage — only pain. This makes Qian Xuantong's counter-move all the more radical: he introduces the idea that waking changes the structural conditions, not just the individual experience.
+        </div>
+      </div>
+
+      <div class="annotation" id="n8">
+        <span class="annotation-num">8</span>
+        <div class="annotation-text">
+          <strong><span class="zh">你不能说决没有</span></strong> — "You cannot say there is absolutely no…" This is a masterpiece of logical judo. Qian/Jin does not claim that hope <em>exists</em>; he merely demonstrates that Lu Xun cannot <em>prove</em> it does not. The double negative (<span class="zh">不能…决没有</span>) mirrors Lu Xun's own double emphasis in the setup, turning the same rhetorical structure against his pessimism. This is the sentence that changed modern Chinese literature.
+        </div>
+      </div>
+
+      <div class="annotation" id="n9">
+        <span class="annotation-num">9</span>
+        <div class="annotation-text">
+          <strong><span class="zh">自有我的确信</span></strong> — "had my own firm convictions." Lu Xun never actually abandons his pessimism. He concedes the logical point about hope while holding onto his emotional conviction. This tension — acting <em>as if</em> change is possible while privately believing it is not — is the defining stance of Lu Xun's entire body of work.
+        </div>
+      </div>
+
+      <div class="annotation" id="n10">
+        <span class="annotation-num">10</span>
+        <div class="annotation-text">
+          <strong><span class="zh">不能抹杀</span></strong> — "Cannot be obliterated." Note that Lu Xun does not say hope is <em>justified</em>, only that it cannot be logically <em>eliminated</em>. The gap between those two positions is the entire space in which his literature operates.
+        </div>
+      </div>
+
+      <div class="annotation" id="n11">
+        <span class="annotation-num">11</span>
+        <div class="annotation-text">
+          <strong><span class="zh">以我之必无的证明，来折服了他之所谓可有</span></strong> — "Use my own proof of what <em>certainly will not</em> be to overcome his claim of what <em>might possibly</em> be." This is the epistemological core of the passage: certainty about the future is impossible, and therefore despair — which requires such certainty — is paradoxically less rational than hope.
+        </div>
+      </div>
+
+      <div class="annotation" id="n12">
+        <span class="annotation-num">12</span>
+        <div class="annotation-text">
+          <strong><span class="zh">寂寞里奔驰的猛士</span></strong> — "Valiant warriors who rush onward through loneliness." One of Lu Xun's most moving images. The <span class="zh">猛士</span> (fierce warriors) are the reformers and revolutionaries who fight on without acknowledgment, surrounded by an indifferent populace. The word <span class="zh">寂寞</span> (loneliness, desolation) recurs throughout the preface as almost a technical term for the condition of the awakened intellectual in a sleeping society.
+        </div>
+      </div>
+
+      <div class="annotation" id="n13">
+        <span class="annotation-num">13</span>
+        <div class="annotation-text">
+          <strong><span class="zh">不惮于前驱</span></strong> — "would not fear to advance / be in the vanguard." <span class="zh">前驱</span> (vanguard) carries both military and political connotations. Lu Xun reimagines the writer's role not as a leader but as a morale officer — someone who maintains the courage of those already fighting.
+        </div>
+      </div>
+
+      <div class="annotation" id="n14">
+        <span class="annotation-num">14</span>
+        <div class="annotation-text">
+          <strong><span class="zh">不暇顾及</span></strong> — "no leisure to attend to." The modesty is partly genuine, partly performative. Lu Xun was an extraordinarily deliberate stylist who agonized over every word. The claim of indifference to the quality of his own cries is a rhetorical device that reinforces the urgency: there is no time for aesthetic self-regard.
+        </div>
+      </div>
+
+      <div class="annotation" id="n15">
+        <span class="annotation-num">15</span>
+        <div class="annotation-text">
+          <strong><span class="zh">听将令</span></strong> — "obey the general's orders." The metaphor shifts to military hierarchy. The "general" is Chen Duxiu (陈独秀), editor of <em>New Youth</em> and later co-founder of the Chinese Communist Party. Lu Xun frames his writing as service, not self-expression — a crucial move for understanding why he sometimes falsified his own vision in his fiction.
+        </div>
+      </div>
+
+      <div class="annotation" id="n16">
+        <span class="annotation-num">16</span>
+        <div class="annotation-text">
+          <strong><span class="zh">曲笔</span> (qū bǐ)</strong> — "crooked brush" — a classical historiographical term for deliberate distortion of the record. In Confucian historiography, <span class="zh">曲笔</span> is the opposite of <span class="zh">直笔</span> (straight brush, honest recording). Lu Xun's use of the term is startlingly honest: he is confessing, in the preface to his own collection, that some of his stories are <em>not entirely truthful</em> — that he has added false hope where he saw none.
+        </div>
+      </div>
+
+      <div class="annotation" id="n17">
+        <span class="annotation-num">17</span>
+        <div class="annotation-text">
+          <strong>The wreath on Yu'er's grave</strong> — In the story "Medicine" (<span class="zh">药</span>), a revolutionary named Xia Yu is executed, and his blood is used to make a folk remedy. At the story's end, his mother finds an unexplained wreath of flowers on his grave. Lu Xun admits this wreath is a fabrication — a concession to the demand for hope that he did not feel. This confession makes the preface one of the most remarkable acts of authorial transparency in world literature.
+        </div>
+      </div>
+
+      <div class="annotation" id="n18">
+        <span class="annotation-num">18</span>
+        <div class="annotation-text">
+          <strong><span class="zh">不主张消极</span></strong> — "was opposed to pessimism / negativism." <span class="zh">消极</span> (passive, negative, pessimistic) was a politically loaded term in New Culture Movement discourse. The "commander-in-chief" (Chen Duxiu) demanded literature that would energize, not demoralize. Lu Xun complied — but this passage is his quiet rebellion: the confession that his compliance was strategic, not sincere.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== COMMENTARY ===== -->
+  <section id="commentary">
+    <div class="section-label">Expert Commentary</div>
+    <h2>Critical Perspectives</h2>
+
+    <div class="commentary">
+      <div class="scholar">On the epistemology of hope</div>
+      <p>The iron house metaphor is often read as a call to action, but its philosophical structure is more subtle. Lu Xun does not argue that hope is warranted — he argues that despair is <em>unwarrantable</em>. The logical asymmetry between proving a negative (hope is futile) and asserting a possibility (hope might exist) means the pessimist always has a weaker epistemic position than the optimist, regardless of the evidence. This is essentially a Pascalian wager applied to social activism: the cost of false hope is suffering, but the cost of false despair is extinction.</p>
+      <p>As Leo Ou-fan Lee has observed, Lu Xun's position is one of "resistant despair" — he acts against his own beliefs, not because he has overcome them, but because the alternative (silence) is logically indefensible. This makes him perhaps the most honest writer in the activist tradition: he never pretends to believe in the cause he serves.</p>
+    </div>
+
+    <div class="commentary">
+      <div class="scholar">On 曲笔 — the "crooked brush" confession</div>
+      <p>The admission that Lu Xun used <span style="font-family:'Noto Serif SC',serif;">曲笔</span> — deliberate falsification — in his own fiction has troubled scholars for a century. It raises a fundamental question about the relationship between art and truth in revolutionary literature. If the artist knows that the hope in his work is fabricated, does the work become propaganda? Or does the act of confession — placed prominently in the preface — transform the fabrication into something more complex: a hope <em>about</em> hope, a wish that the false wreath might someday become true?</p>
+      <p>C.T. Hsia argued that this confession reveals Lu Xun's "obsession with China" — his inability to detach his art from national salvation, even at the cost of artistic integrity. Marston Anderson, by contrast, reads it as a sophisticated meditation on the ethics of literary realism itself: if reality is unbearable, then faithful representation may be less moral than strategic distortion.</p>
+    </div>
+
+    <div class="commentary">
+      <div class="scholar">On the metaphor's legacy</div>
+      <p>The iron house has become one of the most cited and contested images in Chinese intellectual life. During the Mao era, it was read as a proto-Marxist call to revolutionary consciousness. In the 1980s "Culture Fever" (<span style="font-family:'Noto Serif SC',serif;">文化热</span>), it was reinterpreted as a liberal humanist plea for individual awakening. After 1989, it took on darker readings — the iron house as a metaphor for authoritarian enclosure that may indeed be indestructible.</p>
+      <p>The metaphor's endurance lies in its formal openness: Lu Xun presents two positions (despair and hope) without resolving the tension between them. Every generation re-reads the passage and finds its own answer to the question Lu Xun left open: <em>is it better to wake the sleepers, or not?</em></p>
+    </div>
+
+    <div class="commentary">
+      <div class="scholar">On the relevance beyond China</div>
+      <p>The iron house parable resonates with a long tradition of Western philosophical thought on the ethics of enlightenment. Plato's allegory of the cave poses a structural parallel: the awakened philosopher returns to the darkness, risking ridicule, to free others. But Lu Xun's version is bleaker — his philosopher is not confident that escape is possible, only that silence is wrong. The parable also anticipates later existentialist arguments (Camus's Sisyphus, Sartre's engagement) about acting in the absence of guaranteed meaning. What distinguishes Lu Xun is the sharp emotional specificity: not abstract "meaning" but the question of whether you have the <em>right</em> to cause suffering in others by sharing knowledge that may be useless.</p>
+    </div>
+
+  </section>
+
+  <!-- ===== KEY TERMS ===== -->
+  <section id="terms">
+    <div class="section-label">Glossary</div>
+    <h2>Key Terms</h2>
+
+    <div class="terms-grid">
+      <div class="term-zh">铁屋子</div>
+      <div class="term-def"><strong>tiě wūzi</strong> — Iron house/room. The inescapable enclosure of Chinese society under tradition and imperialism.</div>
+
+      <div class="term-zh">呐喊</div>
+      <div class="term-def"><strong>nàhǎn</strong> — Outcry, battle cry, call to arms. The title of Lu Xun's collection and the metaphor for his writing as a shout to rouse the sleeping.</div>
+
+      <div class="term-zh">寂寞</div>
+      <div class="term-def"><strong>jìmò</strong> — Loneliness, desolation. Lu Xun's recurring term for the isolation of the awakened intellectual in a somnolent society.</div>
+
+      <div class="term-zh">曲笔</div>
+      <div class="term-def"><strong>qū bǐ</strong> — Crooked brush. Historiographical term for deliberate distortion. Lu Xun's confession of strategic falsification in his fiction.</div>
+
+      <div class="term-zh">猛士</div>
+      <div class="term-def"><strong>měng shì</strong> — Fierce warrior, valiant fighter. The lonely reformers for whom Lu Xun writes — not to lead, but to sustain.</div>
+
+      <div class="term-zh">消极</div>
+      <div class="term-def"><strong>xiāojí</strong> — Passive, negative, pessimistic. The disposition the New Culture Movement's leaders refused to permit in their literary allies.</div>
+
+      <div class="term-zh">新青年</div>
+      <div class="term-def"><strong>Xīn Qīngnián</strong> — <em>New Youth</em>. The journal (1915–1926) that served as the organ of the New Culture Movement. Lu Xun published his early stories here at Qian Xuantong's urging.</div>
+
+      <div class="term-zh">狂人日记</div>
+      <div class="term-def"><strong>Kuángrén Rìjì</strong> — "A Madman's Diary" (1918). Lu Xun's first short story and the first major work of modern Chinese vernacular fiction. The "madman" reads Confucian texts and sees the words "eat people" between the lines.</div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  Lu Xun's works are in the public domain. Original Chinese text from 《鲁迅全集》.<br>
+  Commentary synthesizes scholarship by Leo Ou-fan Lee, C.T. Hsia, Marston Anderson, and others.<br>
+  Prepared for study and reference.
+</footer>
+
+</body>
+</html>
