@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Survivor 50: In the Hands of the Fans — Season Preview & Draft Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cila: #E8760A;
+    --cila-light: #FFF3E6;
+    --cila-glow: rgba(232, 118, 10, 0.3);
+    --kalo: #1B6DB5;
+    --kalo-light: #E6F0FA;
+    --kalo-glow: rgba(27, 109, 181, 0.3);
+    --vatu: #7B2D8E;
+    --vatu-light: #F3E6F8;
+    --vatu-glow: rgba(123, 45, 142, 0.3);
+    --gold: #D4A843;
+    --dark: #1a1a1a;
+    --darker: #111;
+    --text: #e0e0e0;
+    --text-muted: #999;
+    --card-bg: #222;
+    --card-border: #333;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--darker);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ========== HERO ========== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 50% 30%, rgba(212, 168, 67, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(232, 118, 10, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(123, 45, 142, 0.08) 0%, transparent 50%),
+                var(--darker);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4A843' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+  }
+
+  .torch-container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .torch {
+    font-size: 80px;
+    animation: flicker 2s ease-in-out infinite alternate;
+    filter: drop-shadow(0 0 30px rgba(212, 168, 67, 0.6));
+  }
+
+  @keyframes flicker {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), #b8912e);
+    color: var(--darker);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    padding: 6px 24px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    letter-spacing: 6px;
+    line-height: 0.95;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(180deg, #fff 0%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 4px 20px rgba(212, 168, 67, 0.3));
+  }
+
+  .hero h1 .fifty {
+    display: block;
+    font-size: 1.8em;
+    background: linear-gradient(180deg, var(--gold) 0%, #8B6914 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    color: var(--gold);
+    margin-top: 10px;
+    position: relative;
+    z-index: 2;
+    opacity: 0.9;
+  }
+
+  .hero-meta {
+    margin-top: 30px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-meta-item {
+    text-align: center;
+  }
+
+  .hero-meta-item .label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+  }
+
+  .hero-meta-item .value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    color: #fff;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: bounce 2s infinite;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-10px); }
+    60% { transform: translateX(-50%) translateY(-5px); }
+  }
+
+  /* ========== SECTIONS ========== */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section {
+    padding: 80px 0;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-header h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 4px;
+    color: #fff;
+  }
+
+  .section-header .accent-line {
+    width: 60px;
+    height: 3px;
+    margin: 12px auto;
+    border-radius: 2px;
+  }
+
+  .section-header p {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 0.95rem;
+  }
+
+  /* ========== TRIBE SECTIONS ========== */
+  .tribe-section {
+    padding: 60px 0;
+  }
+
+  .tribe-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid;
+  }
+
+  .tribe-header .tribe-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+  .tribe-header h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 4px;
+  }
+
+  .tribe-header .tribe-tagline {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  /* Cila */
+  .tribe-cila .tribe-header { border-color: var(--cila); }
+  .tribe-cila .tribe-icon { background: var(--cila); }
+  .tribe-cila h3 { color: var(--cila); }
+  .tribe-cila .player-card { border-top: 3px solid var(--cila); }
+  .tribe-cila .player-card:hover { box-shadow: 0 8px 32px var(--cila-glow); }
+  .tribe-cila .season-tag { background: var(--cila-light); color: var(--cila); }
+  .tribe-cila .winner-badge { background: var(--cila); }
+
+  /* Kalo */
+  .tribe-kalo .tribe-header { border-color: var(--kalo); }
+  .tribe-kalo .tribe-icon { background: var(--kalo); }
+  .tribe-kalo h3 { color: var(--kalo); }
+  .tribe-kalo .player-card { border-top: 3px solid var(--kalo); }
+  .tribe-kalo .player-card:hover { box-shadow: 0 8px 32px var(--kalo-glow); }
+  .tribe-kalo .season-tag { background: var(--kalo-light); color: var(--kalo); }
+  .tribe-kalo .winner-badge { background: var(--kalo); }
+
+  /* Vatu */
+  .tribe-vatu .tribe-header { border-color: var(--vatu); }
+  .tribe-vatu .tribe-icon { background: var(--vatu); }
+  .tribe-vatu h3 { color: var(--vatu); }
+  .tribe-vatu .player-card { border-top: 3px solid var(--vatu); }
+  .tribe-vatu .player-card:hover { box-shadow: 0 8px 32px var(--vatu-glow); }
+  .tribe-vatu .season-tag { background: var(--vatu-light); color: var(--vatu); }
+  .tribe-vatu .winner-badge { background: var(--vatu); }
+
+  /* ========== PLAYER CARDS ========== */
+  .player-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .player-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+
+  .player-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .player-photo img {
+    transition: transform 0.4s ease;
+  }
+
+  .player-card:hover .player-photo img {
+    transform: scale(1.05);
+  }
+
+  .player-card-inner {
+    padding: 24px;
+  }
+
+  .player-name-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+
+  .player-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: #fff;
+  }
+
+  .winner-badge {
+    font-size: 0.6rem;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+
+  .player-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+
+  .player-seasons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+
+  .season-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .player-resume {
+    font-size: 0.85rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .player-resume strong {
+    color: #fff;
+  }
+
+  .stat-row {
+    display: flex;
+    gap: 16px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--card-border);
+  }
+
+  .stat {
+    text-align: center;
+    flex: 1;
+  }
+
+  .stat-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    color: #fff;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+  }
+
+  /* ========== ANALYSIS ========== */
+  .analysis-section {
+    background: linear-gradient(180deg, var(--darker) 0%, #1a1a2e 50%, var(--darker) 100%);
+  }
+
+  .storyline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+  }
+
+  .storyline-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 30px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .storyline-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--gold);
+  }
+
+  .storyline-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    line-height: 1;
+    background: linear-gradient(180deg, var(--gold), transparent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.5;
+  }
+
+  .storyline-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    color: #fff;
+    margin: 6px 0 10px;
+  }
+
+  .storyline-body {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.65;
+  }
+
+  .storyline-players {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .storyline-player-tag {
+    background: rgba(212, 168, 67, 0.15);
+    color: var(--gold);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+
+  /* ========== DRAFT TIERS ========== */
+  .tiers-section {
+    background: var(--darker);
+  }
+
+  .tier {
+    margin-bottom: 30px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .tier-header {
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+  }
+
+  .tier-s .tier-header { background: linear-gradient(90deg, rgba(212, 168, 67, 0.3), transparent); color: var(--gold); }
+  .tier-a .tier-header { background: linear-gradient(90deg, rgba(232, 118, 10, 0.3), transparent); color: var(--cila); }
+  .tier-b .tier-header { background: linear-gradient(90deg, rgba(27, 109, 181, 0.3), transparent); color: var(--kalo); }
+  .tier-c .tier-header { background: linear-gradient(90deg, rgba(123, 45, 142, 0.3), transparent); color: var(--vatu); }
+
+  .tier-players {
+    padding: 16px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tier-chip {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #fff;
+    transition: background 0.2s;
+  }
+
+  .tier-chip:hover {
+    background: rgba(255,255,255,0.1);
+  }
+
+  .tier-chip .chip-detail {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    display: block;
+  }
+
+  /* ========== FOOTER ========== */
+  footer {
+    text-align: center;
+    padding: 40px 24px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--card-border);
+  }
+
+  footer .credit {
+    margin-top: 8px;
+    font-size: 0.7rem;
+    opacity: 0.6;
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    .player-grid { grid-template-columns: 1fr; }
+    .storyline-grid { grid-template-columns: 1fr; }
+    .hero-meta { flex-direction: column; gap: 16px; }
+    section { padding: 50px 0; }
+  }
+
+  /* Smooth scrolling */
+  html { scroll-behavior: smooth; }
+
+  /* Selection color */
+  ::selection {
+    background: var(--gold);
+    color: var(--darker);
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== HERO ==================== -->
+<div class="hero">
+  <div class="torch-container">
+    <div class="torch">&#128293;</div>
+  </div>
+  <div class="hero-badge">25 Years of Survivor</div>
+  <h1>
+    SURVIVOR
+    <span class="fifty">50</span>
+  </h1>
+  <div class="hero-subtitle">In the Hands of the Fans</div>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <div class="label">Premiere</div>
+      <div class="value">Feb 25, 2026</div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="label">Castaways</div>
+      <div class="value">24 Returnees</div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="label">Tribes</div>
+      <div class="value">Cila &bull; Kalo &bull; Vatu</div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="label">Past Winners</div>
+      <div class="value">3 in the Cast</div>
+    </div>
+  </div>
+  <div class="scroll-hint">&#9660; Scroll to Explore &#9660;</div>
+</div>
+
+<!-- ==================== OVERVIEW ==================== -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <h2>The Golden Season</h2>
+      <div class="accent-line" style="background: linear-gradient(90deg, var(--cila), var(--kalo), var(--vatu));"></div>
+      <p>Survivor celebrates its 50th season with 24 all-star returnees spanning 25 years of the game &mdash; from Borneo to Season 49. Three tribes. Three past winners. Legends, robbed goddesses, challenge beasts, and superfans collide in what promises to be the most competitive season ever. Oh, and fans get to shape the game through online voting. Buckle up.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CILA TRIBE ==================== -->
+<section class="tribe-section tribe-cila">
+  <div class="container">
+    <div class="tribe-header">
+      <div class="tribe-icon">&#127796;</div>
+      <div>
+        <h3>Cila Tribe</h3>
+        <div class="tribe-tagline">The Orange Tribe &mdash; stacked with legends and strategic firepower</div>
+      </div>
+    </div>
+    <div class="player-grid">
+
+      <!-- Cirie Fields -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0Nzkx/survivor-50-1554791.jpg" alt="Cirie Fields" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Cirie Fields</div>
+          </div>
+          <div class="player-meta">Nurse &bull; Walterboro, SC</div>
+          <div class="player-seasons">
+            <span class="season-tag">S12 Panama</span>
+            <span class="season-tag">S16 Micronesia</span>
+            <span class="season-tag">S20 HvV</span>
+            <span class="season-tag">S34 Game Changers</span>
+          </div>
+          <div class="player-resume">
+            The greatest player to never win. Four previous seasons, four increasingly heartbreaking exits &mdash; including being eliminated without receiving a single vote against her in Game Changers. <strong>Best finish: 3rd (Micronesia).</strong> A master manipulator and social queen entering her record-tying 5th season.
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">5th</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">121</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ozzy Lusth -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0ODg2/survivor-50-1554886.jpg" alt="Ozzy Lusth" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Ozzy Lusth</div>
+          </div>
+          <div class="player-meta">Actor / Challenge Beast &bull; Venice, CA</div>
+          <div class="player-seasons">
+            <span class="season-tag">S13 Cook Islands</span>
+            <span class="season-tag">S16 Micronesia</span>
+            <span class="season-tag">S23 South Pacific</span>
+            <span class="season-tag">S34 Game Changers</span>
+          </div>
+          <div class="player-resume">
+            Perhaps the most dominant physical player in Survivor history. Holds the record for individual immunity wins. Came agonizingly close to winning Cook Islands as runner-up. <strong>Best finish: 2nd (Cook Islands).</strong> Also entering his record-tying 5th season alongside rival-turned-ally Cirie.
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">5th</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">128</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Christian Hubicki -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0NzY3/survivor-50-1554767.jpg" alt="Christian Hubicki" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Christian Hubicki</div>
+          </div>
+          <div class="player-meta">Robotics Professor &bull; Baltimore, MD</div>
+          <div class="player-seasons">
+            <span class="season-tag">S37 David vs. Goliath</span>
+          </div>
+          <div class="player-resume">
+            The nerdy fan favorite who charmed his way deep into one of the best seasons ever. A robotics professor whose combination of intelligence and likability made him a constant target. <strong>Finish: 7th (David vs. Goliath).</strong> Expect bigger threats to shield him this time around.
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">2nd</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">36</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Savannah Louie -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0OTA0/survivor-50-1554904.jpg" alt="Savannah Louie" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Savannah Louie</div>
+            <span class="winner-badge">&#9733; Winner</span>
+          </div>
+          <div class="player-meta">Journalist &bull; Georgia</div>
+          <div class="player-seasons">
+            <span class="season-tag">S49 (Winner)</span>
+          </div>
+          <div class="player-resume">
+            The freshest winner in Survivor history &mdash; crowned Sole Survivor on Season 49 just weeks ago and immediately thrust back into the game. <strong>Finish: 1st (Season 49).</strong> Will her recent win make her an immediate target, or can she leverage the chaos of 24 players to fly under the radar?
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">2nd</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">26</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">1</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rick Devens -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0ODk2/survivor-50-1554896.jpg" alt="Rick Devens" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Rick Devens</div>
+          </div>
+          <div class="player-meta">News Anchor &bull; Macon, GA</div>
+          <div class="player-seasons">
+            <span class="season-tag">S38 Edge of Extinction</span>
+          </div>
+          <div class="player-resume">
+            The charismatic news anchor who dominated the post-merge of Edge of Extinction after returning from the Edge. A scrappy underdog who won multiple immunities and played idols spectacularly. <strong>Finish: 4th (Edge of Extinction).</strong> Fellow Georgia journalist Savannah Louie could be a natural ally.
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">2nd</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">38</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Emily Flippen -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0ODE5/survivor-50-1554819.jpg" alt="Emily Flippen" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Emily Flippen</div>
+          </div>
+          <div class="player-meta">Investment Analyst &bull; Maryland</div>
+          <div class="player-seasons">
+            <span class="season-tag">S45</span>
+          </div>
+          <div class="player-resume">
+            One of the best redemption arcs in new-era Survivor. Started her season as the tribe outcast, then clawed her way into the majority and became a beloved strategic player. <strong>Finish: 7th (Season 45).</strong> Her underdog-to-power-player trajectory makes her dangerous this time.
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">2nd</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">22</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jenna Lewis-Dougherty -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0ODQx/survivor-50-1554841.jpg" alt="Jenna Lewis-Dougherty" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Jenna Lewis-Dougherty</div>
+          </div>
+          <div class="player-meta">OG Survivor &bull; New Hampshire</div>
+          <div class="player-seasons">
+            <span class="season-tag">S1 Borneo</span>
+            <span class="season-tag">S8 All-Stars</span>
+          </div>
+          <div class="player-resume">
+            A day-one Survivor player &mdash; literally. Competed on the very first season of Survivor in 2000, then returned for All-Stars. <strong>Best finish: 3rd (All-Stars).</strong> The oldest-school player in the cast and a living bridge to where it all began 25 years ago.
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">3rd</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">73</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Joe Hunter -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0ODQ5/survivor-50-1554849.jpg" alt="Joe Hunter" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Joe Hunter</div>
+          </div>
+          <div class="player-meta">Fire Captain &bull; Season 48 standout</div>
+          <div class="player-seasons">
+            <span class="season-tag">S48</span>
+          </div>
+          <div class="player-resume">
+            A physical powerhouse who was a major force in Season 48, finishing just short of the win. A fire captain with natural leadership skills and challenge prowess. <strong>Finish: 3rd (Season 48).</strong> His physicality will make him a valuable pre-merge asset but a post-merge threat.
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">2nd</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">25</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== KALO TRIBE ==================== -->
+<section class="tribe-section tribe-kalo">
+  <div class="container">
+    <div class="tribe-header">
+      <div class="tribe-icon">&#127754;</div>
+      <div>
+        <h3>Kalo Tribe</h3>
+        <div class="tribe-tagline">The Blue Tribe &mdash; a volatile mix of old-school charisma and new-era cunning</div>
+      </div>
+    </div>
+    <div class="player-grid">
+
+      <!-- Coach -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0ODAw/survivor-50-1554800.jpg" alt="Coach Wade" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Benjamin "Coach" Wade</div>
+          </div>
+          <div class="player-meta">Conductor / Dragon Slayer &bull; Susanville, CA</div>
+          <div class="player-seasons">
+            <span class="season-tag">S18 Tocantins</span>
+            <span class="season-tag">S20 HvV</span>
+            <span class="season-tag">S23 South Pacific</span>
+          </div>
+          <div class="player-resume">
+            The self-proclaimed Dragon Slayer. One of the most iconic characters in Survivor history. Went from eccentric first-boot candidate in Tocantins to controlling the entire game in South Pacific. <strong>Best finish: 2nd (South Pacific).</strong> Universally beloved by the cast &mdash; everyone wants to work with Coach.
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">4th</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">100</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mike White -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0ODgx/survivor-50-1554881.jpg" alt="Mike White" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Mike White</div>
+          </div>
+          <div class="player-meta">Writer/Director (White Lotus) &bull; Los Angeles, CA</div>
+          <div class="player-seasons">
+            <span class="season-tag">S37 David vs. Goliath</span>
+          </div>
+          <div class="player-resume">
+            Hollywood heavyweight who created The White Lotus &mdash; and also made it to Final Tribal Council on one of Survivor's best seasons. A cerebral, creative player who funded his tribe's comfort with personal wealth. <strong>Finish: 2nd (David vs. Goliath).</strong> Possibly the most famous person to ever play Survivor.
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">2nd</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">39</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dee Valladares -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0ODEx/survivor-50-1554811.jpg" alt="Dee Valladares" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Dee Valladares</div>
+            <span class="winner-badge">&#9733; Winner</span>
+          </div>
+          <div class="player-meta">Entrepreneur &bull; Miami, FL</div>
+          <div class="player-seasons">
+            <span class="season-tag">S45 (Winner)</span>
+          </div>
+          <div class="player-resume">
+            Dominated Season 45 with a ruthless, strategic game. Controlled the post-merge vote after vote and owned her moves at Final Tribal Council. <strong>Finish: 1st (Season 45).</strong> One of three past winners in the cast &mdash; her aggressive style could make her a shield or a target.
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">2nd</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">26</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">1</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chrissy Hofbeck -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0NzYw/survivor-50-1554760.jpg" alt="Chrissy Hofbeck" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Chrissy Hofbeck</div>
+          </div>
+          <div class="player-meta">Actuary &bull; New Jersey</div>
+          <div class="player-seasons">
+            <span class="season-tag">S35 HHH</span>
+          </div>
+          <div class="player-resume">
+            A strategic powerhouse on Heroes vs. Healers vs. Hustlers who won multiple immunities and made it to Final Tribal Council. One of the fiercest competitors of her era who was arguably robbed by a controversial twist. <strong>Finish: 2nd (Season 35).</strong> A seriously underestimated player.
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">2nd</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">39</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charlie Davis -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0NzUw/survivor-50-1554750.jpg" alt="Charlie Davis" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Charlie Davis</div>
+          </div>
+          <div class="player-meta">Law Student &bull; Season 46</div>
+          <div class="player-seasons">
+            <span class="season-tag">S46</span>
+          </div>
+          <div class="player-resume">
+            A smooth social player who made it all the way to Final Tribal Council on Season 46. Known for building strong relationships and playing a clean, likable game. <strong>Finish: 2nd (Season 46).</strong> His social finesse makes him a sneaky contender in a field of bigger targets.
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">2nd</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">26</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tiffany Ervin -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0OTE0/survivor-50-1554914.jpg" alt="Tiffany Ervin" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Tiffany Ervin</div>
+          </div>
+          <div class="player-meta">Security Officer &bull; Season 46</div>
+          <div class="player-seasons">
+            <span class="season-tag">S46</span>
+          </div>
+          <div class="player-resume">
+            A memorable personality from Season 46 with a fiery, emotional playing style. Known for big tribal council moments and an unwavering determination to survive. <strong>Finish: 8th (Season 46).</strong> Will her energy serve her well or paint a target on her back?
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">2nd</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">19</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jonathan Young -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0ODYw/survivor-50-1554860.jpg" alt="Jonathan Young" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Jonathan Young</div>
+          </div>
+          <div class="player-meta">Beach Service Owner &bull; Gulfport, AL</div>
+          <div class="player-seasons">
+            <span class="season-tag">S42</span>
+          </div>
+          <div class="player-resume">
+            An absolute physical specimen who became the breakout star of Season 42 with jaw-dropping challenge performances. Single-handedly carried his tribe in multiple challenges. <strong>Finish: 4th (Season 42).</strong> The biggest challenge threat in this entire cast.
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">2nd</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">25</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kamilla Karthigesu -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0ODc0/survivor-50-1554874.jpg" alt="Kamilla Karthigesu" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Kamilla Karthigesu</div>
+          </div>
+          <div class="player-meta">Season 48 standout</div>
+          <div class="player-seasons">
+            <span class="season-tag">S48</span>
+          </div>
+          <div class="player-resume">
+            A strong strategic player from Season 48 who narrowly missed the finale. Impressed with her social awareness and ability to navigate shifting alliances. <strong>Finish: 4th (Season 48).</strong> A newer player with something to prove on the big stage.
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">2nd</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">24</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== VATU TRIBE ==================== -->
+<section class="tribe-section tribe-vatu">
+  <div class="container">
+    <div class="tribe-header">
+      <div class="tribe-icon">&#127755;</div>
+      <div>
+        <h3>Vatu Tribe</h3>
+        <div class="tribe-tagline">The Purple Tribe &mdash; old-school legends meet new-era assassins</div>
+      </div>
+    </div>
+    <div class="player-grid">
+
+      <!-- Colby Donaldson -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0ODA3/survivor-50-1554807.jpg" alt="Colby Donaldson" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Colby Donaldson</div>
+          </div>
+          <div class="player-meta">Actor &bull; Christoval, TX</div>
+          <div class="player-seasons">
+            <span class="season-tag">S2 Australian Outback</span>
+            <span class="season-tag">S8 All-Stars</span>
+            <span class="season-tag">S20 HvV</span>
+          </div>
+          <div class="player-resume">
+            The original golden boy of Survivor. Famously took Tina Wesson to the Final 2 over Keith in the Australian Outback &mdash; and lost. One of the most recognizable faces in reality TV history. <strong>Best finish: 2nd (Australian Outback).</strong> Returning after a 16-year absence from the game.
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">4th</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">92</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stephenie LaGrossa Kendrick -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0OTEw/survivor-50-1554910.jpg" alt="Stephenie LaGrossa Kendrick" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Stephenie LaGrossa Kendrick</div>
+          </div>
+          <div class="player-meta">Pharmaceutical Sales &bull; Philadelphia, PA</div>
+          <div class="player-seasons">
+            <span class="season-tag">S10 Palau</span>
+            <span class="season-tag">S11 Guatemala</span>
+            <span class="season-tag">S20 HvV</span>
+          </div>
+          <div class="player-resume">
+            One of the most beloved underdogs ever. Was the last member standing on the decimated Ulong tribe in Palau, then came back to make the finals in Guatemala. A fierce competitor with a legendary never-quit attitude. <strong>Best finish: 2nd (Guatemala).</strong>
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">4th</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">79</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aubry Bracco -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0NzIw/survivor-50-1554720.jpg" alt="Aubry Bracco" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Aubry Bracco</div>
+          </div>
+          <div class="player-meta">Marketing Director &bull; Cambridge, MA</div>
+          <div class="player-seasons">
+            <span class="season-tag">S32 Kaoh Rong</span>
+            <span class="season-tag">S34 Game Changers</span>
+            <span class="season-tag">S38 Edge of Extinction</span>
+          </div>
+          <div class="player-resume">
+            An analytical mastermind who played one of the best losing games in history on Kaoh Rong. Many fans believe she was robbed of the win. Brings a deep strategic mind and strong social awareness. <strong>Best finish: 2nd (Kaoh Rong).</strong> Pre-season analytics have her as a top contender to win it all.
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">4th</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">104</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kyle Fraser -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0ODc4/survivor-50-1554878.jpg" alt="Kyle Fraser" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Kyle Fraser</div>
+            <span class="winner-badge">&#9733; Winner</span>
+          </div>
+          <div class="player-meta">Season 48 Winner</div>
+          <div class="player-seasons">
+            <span class="season-tag">S48 (Winner)</span>
+          </div>
+          <div class="player-resume">
+            The Season 48 Sole Survivor who dominated his first outing. Now returning with a massive target on his back &mdash; Cirie Fields has openly named him as her #1 target. <strong>Finish: 1st (Season 48).</strong> Can he pull off what few winners have done and survive the early game?
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">2nd</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">26</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">1</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Angelina Keeley -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0NzE0/survivor-50-1554714.jpg" alt="Angelina Keeley" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Angelina Keeley</div>
+          </div>
+          <div class="player-meta">Financial Consultant &bull; Sparks, NV</div>
+          <div class="player-seasons">
+            <span class="season-tag">S37 David vs. Goliath</span>
+          </div>
+          <div class="player-resume">
+            The iconic queen of David vs. Goliath &mdash; famously negotiated for rice and never let anyone forget it. Made it to Final Tribal Council but received zero votes. A polarizing, entertaining player with genuine strategic chops. <strong>Finish: 3rd (David vs. Goliath).</strong>
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">2nd</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">39</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Genevieve Mushaluk -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0ODI5/survivor-50-1554829.jpg" alt="Genevieve Mushaluk" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Genevieve Mushaluk</div>
+          </div>
+          <div class="player-meta">Corporate Lawyer &bull; Season 47</div>
+          <div class="player-seasons">
+            <span class="season-tag">S47</span>
+          </div>
+          <div class="player-resume">
+            A sharp, cunning player from Season 47 who played a cutthroat strategic game. Known for making bold moves and being willing to betray alliances when the time was right. <strong>Finish: 5th (Season 47).</strong> A dangerous under-the-radar threat.
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">2nd</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">23</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rizo Velovic -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0OTAw/survivor-50-1554900.jpg" alt="Rizo Velovic" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Rizo Velovic</div>
+          </div>
+          <div class="player-meta">Season 49 Standout</div>
+          <div class="player-seasons">
+            <span class="season-tag">S49</span>
+          </div>
+          <div class="player-resume">
+            Fresh off Season 49 where he was Savannah Louie's closest ally. Lost in the fire-making challenge just short of Final Tribal Council. One of the most recent players in the game with unfinished business. <strong>Finish: 4th (Season 49).</strong>
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">2nd</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">25</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q Burdette -->
+      <div class="player-card">
+    <div class="player-photo" style="height: 280px; overflow: hidden;">
+      <img src="https://parade.com/.image/w_600,q_auto:good,c_fill,ar_3:4,g_face/ODowMDAwMDAwMDAxNTU0ODkx/survivor-50-1554891.jpg" alt="Q Burdette" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+        <div class="player-card-inner">
+          <div class="player-name-row">
+            <div class="player-name">Q Burdette</div>
+          </div>
+          <div class="player-meta">Season 46 wildcard</div>
+          <div class="player-seasons">
+            <span class="season-tag">S46</span>
+          </div>
+          <div class="player-resume">
+            The ultimate chaos agent. Q was an absolute menace in Season 46, constantly flipping alliances, making enemies, and generating drama. He's unpredictable, volatile, and impossible to ignore. <strong>Finish: 6th (Season 46).</strong> Pre-season prediction: likely early boot.
+          </div>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-value">2nd</div><div class="stat-label">Time Playing</div></div>
+            <div class="stat"><div class="stat-value">21</div><div class="stat-label">Career Days</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Wins</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== KEY STORYLINES ==================== -->
+<section class="analysis-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Key Storylines to Watch</h2>
+      <div class="accent-line" style="background: var(--gold);"></div>
+      <p>The narratives, rivalries, and dynamics that will define Survivor's golden season</p>
+    </div>
+
+    <div class="storyline-grid">
+
+      <div class="storyline-card">
+        <div class="storyline-number">01</div>
+        <div class="storyline-title">The Winner's Target</div>
+        <div class="storyline-body">
+          Three past winners enter the game &mdash; Kyle Fraser (S48), Savannah Louie (S49), and Dee Valladares (S45). History tells us returning winners almost always get targeted early. Kyle and Savannah are especially vulnerable since they won just weeks ago and haven't had time to fade from public memory. Dee's aggressive playing style adds fuel. The question isn't whether they'll be targeted &mdash; it's whether any of them can survive long enough to use each other as shields.
+        </div>
+        <div class="storyline-players">
+          <span class="storyline-player-tag">Kyle Fraser</span>
+          <span class="storyline-player-tag">Savannah Louie</span>
+          <span class="storyline-player-tag">Dee Valladares</span>
+        </div>
+      </div>
+
+      <div class="storyline-card">
+        <div class="storyline-number">02</div>
+        <div class="storyline-title">Old School vs. New School</div>
+        <div class="storyline-body">
+          This cast spans 25 years and 49 prior seasons. Jenna Lewis played on the very first season. Savannah Louie won the most recent one. The old-school legends (Cirie, Ozzy, Colby, Coach, Stephenie) play a fundamentally different game than the new-era players raised on shot-in-the-dark dice and advantage-paloozas. Can the OGs adapt? Or will the new-school players' pace overwhelm them? This generational clash will be the defining tension of the season.
+        </div>
+        <div class="storyline-players">
+          <span class="storyline-player-tag">Cirie Fields</span>
+          <span class="storyline-player-tag">Colby Donaldson</span>
+          <span class="storyline-player-tag">Jenna Lewis-Dougherty</span>
+          <span class="storyline-player-tag">Genevieve Mushaluk</span>
+        </div>
+      </div>
+
+      <div class="storyline-card">
+        <div class="storyline-number">03</div>
+        <div class="storyline-title">Cirie &amp; Ozzy: Rivals Reunited</div>
+        <div class="storyline-body">
+          Once bitter opponents on Micronesia (where Cirie orchestrated Ozzy's legendary blindside), these two have since reconciled and now find themselves on the same starting tribe. Both are entering their record-tying 5th season. If they can put their rivalry fully behind them and form a genuine alliance, they become one of the most formidable duos in the game. But can two of the biggest targets in Survivor history protect each other?
+        </div>
+        <div class="storyline-players">
+          <span class="storyline-player-tag">Cirie Fields</span>
+          <span class="storyline-player-tag">Ozzy Lusth</span>
+        </div>
+      </div>
+
+      <div class="storyline-card">
+        <div class="storyline-number">04</div>
+        <div class="storyline-title">The Georgia Connection</div>
+        <div class="storyline-body">
+          Rick Devens and Savannah Louie are both former broadcast journalists from Georgia. This shared background could form the basis of one of the season's strongest alliances. Devens is a scrappy underdog player; Louie is a recent winner with a target. Together, they complement each other's games perfectly. If they connect on Cila before a swap or merge, watch out.
+        </div>
+        <div class="storyline-players">
+          <span class="storyline-player-tag">Rick Devens</span>
+          <span class="storyline-player-tag">Savannah Louie</span>
+        </div>
+      </div>
+
+      <div class="storyline-card">
+        <div class="storyline-number">05</div>
+        <div class="storyline-title">Coach's Redemption Arc</div>
+        <div class="storyline-body">
+          Coach has gone from a laughingstock to a beloved Survivor icon. On his third outing in South Pacific, he controlled the game entirely but lost at Final Tribal Council. Pre-season buzz suggests nearly every player in this cast wants to work with Coach. That kind of social capital is incredibly rare on a returnee season. If Coach can convert goodwill into deep alliances without being seen as a strategic threat, he could finally claim the title.
+        </div>
+        <div class="storyline-players">
+          <span class="storyline-player-tag">Coach Wade</span>
+        </div>
+      </div>
+
+      <div class="storyline-card">
+        <div class="storyline-number">06</div>
+        <div class="storyline-title">In the Hands of the Fans</div>
+        <div class="storyline-body">
+          The season's subtitle isn't just branding. During Season 48, CBS ran unprecedented fan votes that shaped tribe colors, immunity necklace designs, challenge mechanics, and the weight of advantages. This means the game itself is partially crowd-sourced. Expect twists nobody &mdash; including the players &mdash; can predict. The fan voting adds a meta-layer that rewards adaptability over pre-game planning. Rigid strategists beware.
+        </div>
+        <div class="storyline-players">
+          <span class="storyline-player-tag">All 24 Castaways</span>
+        </div>
+      </div>
+
+      <div class="storyline-card">
+        <div class="storyline-number">07</div>
+        <div class="storyline-title">The David vs. Goliath Reunion</div>
+        <div class="storyline-body">
+          Three players from Season 37 &mdash; widely considered a top-5 all-time season &mdash; return together: Christian Hubicki, Mike White, and Angelina Keeley. They know each other's games intimately. Will they band together as a DvG alliance, or will that shared knowledge make them threats to each other? Christian's likability, Mike's fame, and Angelina's polarizing style create fascinating dynamics.
+        </div>
+        <div class="storyline-players">
+          <span class="storyline-player-tag">Christian Hubicki</span>
+          <span class="storyline-player-tag">Mike White</span>
+          <span class="storyline-player-tag">Angelina Keeley</span>
+        </div>
+      </div>
+
+      <div class="storyline-card">
+        <div class="storyline-number">08</div>
+        <div class="storyline-title">The Sleeper Picks</div>
+        <div class="storyline-body">
+          In a cast full of legends and winners, the players who can avoid early attention have a massive advantage. Aubry Bracco's analytical game, Chrissy Hofbeck's underestimated strategic mind, Charlie Davis's smooth social play, and Emily Flippen's underdog energy all position them to go deep while bigger names get targeted. Pre-season analytics specifically flag Aubry as the strongest analytical pick to win. Don't sleep on the quiet assassins.
+        </div>
+        <div class="storyline-players">
+          <span class="storyline-player-tag">Aubry Bracco</span>
+          <span class="storyline-player-tag">Chrissy Hofbeck</span>
+          <span class="storyline-player-tag">Charlie Davis</span>
+          <span class="storyline-player-tag">Emily Flippen</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DRAFT TIERS ==================== -->
+<section class="tiers-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Fantasy Draft Tiers</h2>
+      <div class="accent-line" style="background: var(--gold);"></div>
+      <p>A framework for your draft &mdash; who to reach for and who to fade</p>
+    </div>
+
+    <div class="tier tier-s">
+      <div class="tier-header">&#9733; S-Tier &mdash; High-Ceiling Picks</div>
+      <div class="tier-players">
+        <div class="tier-chip">Aubry Bracco<span class="chip-detail">Analytics darling, shielded by bigger threats</span></div>
+        <div class="tier-chip">Coach Wade<span class="chip-detail">Everyone wants to work with him</span></div>
+        <div class="tier-chip">Christian Hubicki<span class="chip-detail">Likable nerd surrounded by meat shields</span></div>
+        <div class="tier-chip">Charlie Davis<span class="chip-detail">Smooth social game, low threat level</span></div>
+      </div>
+    </div>
+
+    <div class="tier tier-a">
+      <div class="tier-header">A-Tier &mdash; Strong Value Picks</div>
+      <div class="tier-players">
+        <div class="tier-chip">Chrissy Hofbeck<span class="chip-detail">Underestimated strategic force</span></div>
+        <div class="tier-chip">Emily Flippen<span class="chip-detail">Underdog energy, proven growth arc</span></div>
+        <div class="tier-chip">Rick Devens<span class="chip-detail">Scrappy, clutch immunity wins</span></div>
+        <div class="tier-chip">Genevieve Mushaluk<span class="chip-detail">Under the radar, sharp player</span></div>
+        <div class="tier-chip">Mike White<span class="chip-detail">Creative thinker with FTC experience</span></div>
+        <div class="tier-chip">Angelina Keeley<span class="chip-detail">Underestimated strategic chops</span></div>
+      </div>
+    </div>
+
+    <div class="tier tier-b">
+      <div class="tier-header">B-Tier &mdash; High Risk, High Reward</div>
+      <div class="tier-players">
+        <div class="tier-chip">Cirie Fields<span class="chip-detail">GOAT potential but massive target</span></div>
+        <div class="tier-chip">Dee Valladares<span class="chip-detail">Winner's target, but ruthless game</span></div>
+        <div class="tier-chip">Savannah Louie<span class="chip-detail">Freshest winner, huge bullseye</span></div>
+        <div class="tier-chip">Kyle Fraser<span class="chip-detail">Cirie's #1 target &mdash; danger zone</span></div>
+        <div class="tier-chip">Ozzy Lusth<span class="chip-detail">Challenge beast, social liability</span></div>
+        <div class="tier-chip">Stephenie LaGrossa<span class="chip-detail">Fierce competitor, big reputation</span></div>
+        <div class="tier-chip">Kamilla Karthigesu<span class="chip-detail">Newer player with upside</span></div>
+        <div class="tier-chip">Rizo Velovic<span class="chip-detail">Unfinished business, motivated</span></div>
+      </div>
+    </div>
+
+    <div class="tier tier-c">
+      <div class="tier-header">C-Tier &mdash; Proceed with Caution</div>
+      <div class="tier-players">
+        <div class="tier-chip">Colby Donaldson<span class="chip-detail">16 years away &mdash; can he adapt?</span></div>
+        <div class="tier-chip">Jenna Lewis-Dougherty<span class="chip-detail">Old-school game in new-era Survivor</span></div>
+        <div class="tier-chip">Jonathan Young<span class="chip-detail">Challenge beast = post-merge target</span></div>
+        <div class="tier-chip">Joe Hunter<span class="chip-detail">Physical threat, limited strategic resume</span></div>
+        <div class="tier-chip">Tiffany Ervin<span class="chip-detail">Volatile, potential early boot</span></div>
+        <div class="tier-chip">Q Burdette<span class="chip-detail">Chaos agent, likely first out on Vatu</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="container">
+    <p>Survivor 50: In the Hands of the Fans &mdash; Premieres Feb 25, 2026 on CBS</p>
+    <p>Fantasy Draft Season Preview &bull; Prepared for Draft Night</p>
+    <p class="credit">Built by Claude &bull; Anthropic &bull; Your friends aren't ready for this</p>
+  </div>
+</footer>
+
+</body>
+</html>
